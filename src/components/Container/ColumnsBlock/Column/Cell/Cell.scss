@@ -1,0 +1,46 @@
+.cell {
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #182128;
+  border-radius: 16px;
+  margin: 6px auto;
+  width: 100%;
+  background-color: #313C44;
+  position: relative;
+  transition: 0.3s;
+
+  &:hover {
+    scale: 1.1;
+  }
+
+  /* &:after {
+    content: '';
+    border-top: 2px solid #fff;
+    position: absolute;
+    height: 30px;
+    width: 17px;
+    right: 0;
+    bottom: 50%;
+    transform: translateX(100%);
+    border-right: 2px solid #fff;
+  }
+
+  &:before {
+    content: '';
+    border-top: 2px solid #fff;
+    position: absolute;
+    height: 2px;
+    width: 17px;
+    left: 0;
+    top: 50%;
+    transform: translateX(-100%);
+  } */
+
+  &__team {
+    margin-bottom: 6px;
+
+    &--second {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.scss';
+import { Container } from './components/Container/Container';
 
 export const App = () => (
-  <div className="starter">
-    React starter pack
+  <div className="page">
+    <Container />
   </div>
 );
