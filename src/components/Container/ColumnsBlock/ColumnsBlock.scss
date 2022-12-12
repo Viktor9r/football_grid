@@ -6,11 +6,17 @@
 
   &__column {
     transition: 0.3s;
+    background-color: #2A353F;
+    padding: 12px;
+    border-radius: 18px;
+    padding-top: 22px;
+    padding-right: 20px;
+    padding-left: 20px;
 
     &--first {
       grid-column: 1/5;
 
-      &--final {
+      &--quarter {
         display: none;
       }
     };
@@ -18,7 +24,7 @@
     &--second {
       grid-column: 5/9;
 
-      &--final {
+      &--quarter {
         grid-column: 1/5;
       }
     }
@@ -26,7 +32,7 @@
     &--third {
       grid-column: 9/13;
 
-      &--final {
+      &--quarter {
         grid-column: 5/9;
       }
     }
@@ -34,7 +40,7 @@
     &--fourth {
       display: none;
 
-      &--final {
+      &--quarter {
         grid-column: 9/13;
         display: block;
       }
@@ -42,9 +48,11 @@
   }
 
   &__rounds {
+    text-transform: uppercase;
+    background-color: #525D67;
     margin: auto;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid #313C44;

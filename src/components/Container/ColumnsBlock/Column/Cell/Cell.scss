@@ -1,16 +1,21 @@
 .cell {
-  padding: 12px;
+  display: flex;
+  /* padding: 12px; */
   box-sizing: border-box;
-  border: 1px solid #182128;
+  /* border: 1px solid #182128; */
   border-radius: 16px;
   margin: 6px auto;
   width: 100%;
-  background-color: #313C44;
-  position: relative;
+  /* background-color: #313C44; */
+  /* position: relative; */
   transition: 0.3s;
 
   &:hover {
-    scale: 1.1;
+    scale: 1.05;
+  }
+
+  &__team-box {
+    width: 100%;
   }
 
   /* &:after {
@@ -38,6 +43,7 @@
 
   &__team {
     margin-bottom: 6px;
+    width: 100%;
 
     &--second {
       margin-bottom: 0;

@@ -4,24 +4,24 @@ import classNames from 'classnames';
 /* eslint-disable */
 
 export const Buttons = (props) => {
-  const showFinal = () => {
-    props.setFinalVisibility(true);
+  const showquarter = () => {
+    props.setquarterVisibility(true);
   };
 
-  const hideFinal = () => {
-    props.setFinalVisibility(false);
+  const hidequarter = () => {
+    props.setquarterVisibility(false);
   };
 
   return (
     <div className={classNames({
       buttons: true,
-      buttonsFinal: props.finalVisibility
+      buttonsquarter: props.quarterVisibility
     })}>
-      {props.finalVisibility ? (
+      {props.quarterVisibility ? (
         <button
           type="button"
           className="buttons__button"
-          onClick={hideFinal}
+          onClick={hidequarter}
         >
           Previous Stage
         </button>
@@ -29,7 +29,7 @@ export const Buttons = (props) => {
         <button
           type="button"
           className="buttons__button"
-          onClick={showFinal}
+          onClick={showquarter}
         >
           Next Stage
         </button>
