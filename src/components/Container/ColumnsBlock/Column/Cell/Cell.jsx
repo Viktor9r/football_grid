@@ -10,6 +10,9 @@ export const Cell = ({ team }) => (
     <div className="column__line column__line--next"></div>
     <div className="column__line--down"></div>
     <div className="column__line--up"></div> */}
+    {team && (
+      <div className="cell__court">Court 3 | 1:45 pm</div>
+    )}
     <div className="cell">
       <div className="cell__score">
         <Score team={team} />

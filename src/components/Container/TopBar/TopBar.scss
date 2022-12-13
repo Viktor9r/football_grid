@@ -1,16 +1,7 @@
-.buttons {
-  margin-top: 15px;
+.topbar {
   display: flex;
-  width: 100%;
-  grid-column: 1/13;
-  justify-content: flex-start;
-  box-sizing: border-box;
 
-  &--start {
-    justify-content: flex-end;
-  }
-
-  &__button {
+  &__show {
     text-transform: uppercase;
     background: rgba(0, 66, 105, 0.07);
     padding: 20px;
@@ -30,12 +21,4 @@
       border: 1px solid #313C44;
     }
   }
-
-  &--hide {
-    display: none;
-  }
-}
-
-.buttonsquarter {
-  justify-content: flex-start;
 }

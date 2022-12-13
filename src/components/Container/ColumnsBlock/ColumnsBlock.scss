@@ -1,8 +1,9 @@
 .columns-block {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 10px;
+  gap: 30px;
   height: fit-content;
+  transition: 0.3s;
 
   &__column {
     transition: 0.3s;
@@ -45,6 +46,15 @@
         display: block;
       }
     }
+
+    &--hide {
+      display: none;
+    }
+
+    &--first-position {
+      grid-column: 1/5;
+      display: block;
+    }
   }
 
   &__rounds {
@@ -57,5 +67,50 @@
     padding: 10px;
     border: 1px solid #313C44;
     border-radius: 8px;
+
+    &--mar {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.round-setters {
+  grid-column: 1/13;
+  display: flex;
+  height: 20px;
+  margin-bottom: -20px;
+  margin-top: 33px;
+
+  &--bigger-margin {
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    font-family: 'Inter';
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 10px 16px 25px 16px;
+    text-align: center;
+    margin-right: 32px;
+    line-height: 100%;
+    min-width: 120px;
+    border: none;
+    background-color: #182128;
+    color: #fff;
+    transition: 0.3s;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #525D67;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    &:focus {
+      background-color: #525D67;
+      cursor: pointer;
+      border-radius: 4px;
+    }
   }
 }

@@ -1,8 +1,15 @@
 .team {
   background-color: #182128;
   border-radius: 8px;
-  padding: 10px 17px;
+  padding: 12px 17px 15px;
   font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__title {
     margin-bottom: 3px;
@@ -18,5 +25,39 @@
       height: 3px;
       background: rgba(255, 255, 255, 0.2);
     }
+  }
+
+  &__results {
+    display: flex;
+  }
+
+  &__coef {
+    display: flex;
+    align-items: center;
+    margin-right: 14px;
+
+    &-block {
+      width: 19px;
+      height: 19px;
+      background-color: #525D67;
+      border-radius: 2px;
+      margin: auto;
+      text-align: center;
+      font-size: 10px;
+      margin-right: 4px;
+      vertical-align: middle;
+      line-height: 19px;
+
+      &--second {
+        background-color: #44B181;
+      }
+    }
+  }
+
+  &__score {
+    top: 0;
+    bottom: 0;
+    font-size: 20px;
+    line-height: 30px;
   }
 }

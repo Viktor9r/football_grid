@@ -3,24 +3,116 @@ import './ColumnsBlock.scss';
 import classNames from 'classnames';
 import { Column } from './Column/Column';
 import { Buttons } from './Buttons/Buttons';
+import { GridTopBar } from './GridTopBar/GridTopBar';
 /* eslint-disable */
 
-export const ColumnsBlock = () => {
-  const [quarterVisibility, setquarterVisibility] = useState(false);
+export const ColumnsBlock = ({ showPanel, setShowPanel }) => {
+  const [quarterVisibility, setQuarterVisibility] = useState(false);
   const [team, setTeam] = useState(true);
+  const [all, setAll] = useState(true);
+  const [thirtytwo, setThirtyTwo] = useState(false);
+  const [sixteen, setSixteen] = useState(false);
+  const [eight, setEight] = useState(false);
+  const [quarter, setQuarter] = useState(false);
+
+  const onlyAll = () => {
+    setAll(true);
+    setThirtyTwo(false);
+    setSixteen(false);
+    setEight(false);
+    setQuarter(false);
+  };
+
+  const onlyThirtyTwo = () => {
+    setThirtyTwo(true);
+    setAll(false);
+    setSixteen(false);
+    setEight(false);
+    setQuarter(false);
+  };
+
+  const onlySixteen = () => {
+    setSixteen(true);
+    setAll(false);
+    setThirtyTwo(false);
+    setEight(false);
+    setQuarter(false);
+  };
+
+  const onlyEight = () => {
+    setEight(true);
+    setAll(false);
+    setThirtyTwo(false);
+    setSixteen(false);
+    setQuarter(false);
+  };
+
+  const onlyQuarter = () => {
+    setQuarter(true);
+    setAll(false);
+    setThirtyTwo(false);
+    setSixteen(false);
+    setEight(false);
+  };
 
   return (
     <div className="columns-block">
-      <Buttons
-        quarterVisibility={quarterVisibility}
-        setquarterVisibility={setquarterVisibility}
-      />
+      <GridTopBar showPanel={showPanel} setShowPanel={setShowPanel} />
+      <div className={classNames({
+        "round-setters": true,
+        "round-setters--bigger-margin": !all
+      })}>
+        <button
+         onClick={onlyAll}
+          className="round-setters__button round-setters__button--all"
+        >
+          all
+        </button>
+        <button
+          onClick={onlyThirtyTwo}
+          className="round-setters__button round-setters__button--thtw"
+        >
+          1/32 finals
+        </button>
+        <button
+          onClick={onlySixteen}
+          className="round-setters__button round-setters__button--sxtn"
+        >
+          1/16 finals
+        </button>
+        <button
+          onClick={onlyEight}
+          className="round-setters__button round-setters__button--eight"
+        >
+          1/8 finals
+        </button>
+        <button
+          onClick={onlyQuarter}
+          className="round-setters__button round-setters__button--quarter"
+        >
+          1/4 finals
+        </button>
+      </div>
+      {all && (
+        <>
+          <Buttons
+            all={all}
+            quarterVisibility={quarterVisibility}
+            setQuarterVisibility={setQuarterVisibility}
+          />
+        </>
+      )}
       <div className={classNames({
         "columns-block__column": true,
         "columns-block__column--first": true,
-        "columns-block__column--first--quarter": quarterVisibility
+        "columns-block__column--first--quarter": quarterVisibility,
+        "columns-block__column--hide": sixteen || eight || quarter,
+        "columns-block__column--first-position": thirtytwo
       })}>
-        <div className="columns-block__rounds">1/32 finals</div>
+        <div className={classNames({
+          "columns-block__rounds": true,
+          "columns-block__rounds--mar": team,
+        })}>1/32 finals</div>
         <Column
           team={team}
           blocksQuant={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ,16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]}
@@ -29,26 +121,42 @@ export const ColumnsBlock = () => {
       <div className={classNames({
         "columns-block__column": true,
         "columns-block__column--second": true,
-        "columns-block__column--second--quarter": quarterVisibility
+        "columns-block__column--second--quarter": quarterVisibility,
+        "columns-block__column--hide": thirtytwo || eight || quarter,
+        "columns-block__column--first-position": sixteen
       })}>
-        <div className="columns-block__rounds">1/16 finals</div>
-        <Column blocksQuant={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ,16]} />
+        <div className={classNames({
+          "columns-block__rounds": true,
+          "columns-block__rounds--mar": team,
+        })}>1/16 finals</div>
+        <Column
+          team={team}
+          blocksQuant={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ,16]}
+        />
       </div>
       <div className={classNames({
         "columns-block__column": true,
         "columns-block__column--third": true,
-        "columns-block__column--third--quarter": quarterVisibility
+        "columns-block__column--third--quarter": quarterVisibility,
+        "columns-block__column--hide": sixteen || quarter || thirtytwo,
+        "columns-block__column--first-position": eight
       })}>
         <div className="columns-block__rounds">1/8 finals</div>
-        <Column blocksQuant={[1, 2, 3, 4, 5, 6, 7, 8]} />
+        <Column
+          blocksQuant={[1, 2, 3, 4, 5, 6, 7, 8]}
+        />
       </div>
       <div className={classNames({
         "columns-block__column": true,
         "columns-block__column--fourth": true,
-        "columns-block__column--fourth--quarter": quarterVisibility
+        "columns-block__column--fourth--quarter": quarterVisibility,
+        "columns-block__column--hide": sixteen || eight || thirtytwo,
+        "columns-block__column--first-position": quarter
       })}>
-        <div className="columns-block__rounds">Quarters final</div>
-        <Column blocksQuant={[1, 2, 3, 4]} />
+        <div className="columns-block__rounds">Quarter finals</div>
+        <Column
+          blocksQuant={[1, 2, 3, 4]}
+        />
       </div>
     </div>
   );

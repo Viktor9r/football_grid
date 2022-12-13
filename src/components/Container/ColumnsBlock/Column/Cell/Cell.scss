@@ -6,12 +6,13 @@
   border-radius: 16px;
   margin: 6px auto;
   width: 100%;
+  margin-bottom: 12px;
   /* background-color: #313C44; */
   /* position: relative; */
   transition: 0.3s;
 
   &:hover {
-    scale: 1.05;
+    scale: 1.08;
   }
 
   &__team-box {
@@ -48,5 +49,11 @@
     &--second {
       margin-bottom: 0;
     }
+  }
+
+  &__court {
+    margin-bottom: 12px;
+    font-size: 12px;
+    margin-left: 55px;
   }
 }

@@ -10,7 +10,9 @@ export const Column = ({ blocksQuant, team }) => {
         {blocksQuant.map((block) => (
           <li className="column__cell" key={block}>
             {team ? (
-              <Cell team={team} />
+              <>
+                <Cell team={team} />
+              </>
             ) : (
               <Cell />
             )}
