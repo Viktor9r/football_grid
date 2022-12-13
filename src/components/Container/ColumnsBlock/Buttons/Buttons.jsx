@@ -20,18 +20,24 @@ export const Buttons = (props) => {
       {props.quarterVisibility ? (
         <button
           type="button"
-          className="buttons__button"
+          className="buttons__button buttons__button--prev"
           onClick={hideFinal}
         >
-          Previous Stage
+          <div className="buttons__icon buttons__icon--prev"></div>
+          <div className="buttons__text">
+            Previous Stage 
+          </div>
         </button>
       ) : (
         <button
           type="button"
-          className="buttons__button"
+          className="buttons__button buttons__button--next"
           onClick={showFinal}
         >
-          Next Stage
+          <div className="buttons__text">
+            Next Stage 
+          </div>
+          <div className="buttons__icon buttons__icon--next"></div>
         </button>
       )
     }
