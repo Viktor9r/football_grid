@@ -1,7 +1,7 @@
 .team {
   background-color: #182128;
   border-radius: 8px;
-  padding: 12px 17px 15px;
+  padding: 12px 17px;
   font-size: 14px;
   display: flex;
   justify-content: space-between;
@@ -55,9 +55,9 @@
   }
 
   &__score {
-    top: 0;
+    top: 20px;
     bottom: 0;
     font-size: 20px;
-    line-height: 30px;
+    line-height: 35px;
   }
 }

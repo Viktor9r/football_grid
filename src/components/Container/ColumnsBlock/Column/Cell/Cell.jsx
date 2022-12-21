@@ -6,10 +6,6 @@ import { Score } from './Score/Score';
 
 export const Cell = ({ team }) => (
   <>
-    {/* <div className="column__line column__line--prev"></div>
-    <div className="column__line column__line--next"></div>
-    <div className="column__line--down"></div>
-    <div className="column__line--up"></div> */}
     {team && (
       <div className="cell__court">Court 3 | 1:45 pm</div>
     )}
@@ -26,5 +22,6 @@ export const Cell = ({ team }) => (
         </div>
       </div>
     </div>
+    {/* <div className="column__line--down"></div> */}
   </>
 );

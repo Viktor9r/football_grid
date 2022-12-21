@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Column.scss';
 import { Cell } from './Cell/Cell';
 /* eslint-disable */
 
-export const Column = ({ blocksQuant, team }) => {
+export const Column = (props) => {
+
+  useEffect(() => {
+    if (props.team === true && props.columnId === 4) {
+      props.setShowFinals(true);
+    }
+  });
+
   return (
     <div className="column">
       <ul className="column__cells">
-        {blocksQuant.map((block) => (
+        {props.blocksQuant.map((block) => (
           <li className="column__cell" key={block}>
-            {team ? (
+            {props.team ? (
               <>
-                <Cell team={team} />
+                <Cell team={props.team} />
               </>
             ) : (
               <Cell />

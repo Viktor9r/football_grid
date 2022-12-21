@@ -19,7 +19,6 @@ ul {
     list-style: none;
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 20px;
   }
 
   &__cell {
@@ -32,25 +31,11 @@ ul {
     height: 2px;
     background-color: #fff;
 
-    &--prev {
-      left: 0;
-      transform: translateX(-100%);
-      top: 50%;
-    }
-
-    &--next {
-      right: 0;
-      bottom: 50%;
-      transform: translateX(100%);
-    }
-
     &--down {
-      position: absolute;
       background-color: #fff;
       width: 1px;
-      height: 105%;
-      top: -3%;
-      transform: translateX(-17px);
+      height: 90%;
+      transform: translateX(100px);
     }
   }
 }
