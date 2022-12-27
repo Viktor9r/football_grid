@@ -1,33 +1,30 @@
 import React from 'react';
-import './Team.scss';
+import {
+  StyledTeam,
+  StyledTeamText,
+  StyledTeamTextTitle,
+  StyledTeamTextExtra,
+  StyledTeamResults,
+  StyledTeamCoefs,
+  StyledTeamScore,
+  scoreClasses,
+} from './styled';
 /* eslint-disable */
 
 export const Team = ({ team }) => (
-  <div className="team">
-    {!team ? (
-      <>
-        <div className="team__text">
-          <div className="team__title">NA</div>
-          <div className="team__extra team__extra--empty"></div>
-          <div className="team__extra team__extra--empty"></div>
-        </div>
-      </>
-    ) : (
-      <>
-        <div className="team__text">
-          <div className="team__title">C. Williamson</div>
-          <div className="team__extra">Dnipro region</div>
-          <div className="team__extra"></div>
-        </div>
-        <div className="team__results">
-          <div className="team__coef">
-            <div className="team__coef-block team__coef-block--first">0</div>
-            <div className="team__coef-block team__coef-block--second">24</div>
-            <div className="team__coef-block team__coef-block--third">0</div>
-          </div>
-          <div className="team__score">1</div>
-        </div>
-      </>
-    )}
-  </div>
+  <StyledTeam team={team}>
+    <StyledTeamText team={team}>
+          <StyledTeamTextTitle>{team ? 'C.Williamson' : 'NA'}</StyledTeamTextTitle>
+          <StyledTeamTextExtra team={team}>{team && 'Dnipro Region'}</StyledTeamTextExtra>
+          <StyledTeamTextExtra team={team}/>
+        </StyledTeamText>
+        <StyledTeamResults team={team}>
+          <StyledTeamCoefs>
+            <div className={scoreClasses.coefBlock}>0</div>
+            <div className={scoreClasses.coefBlock}>24</div>
+            <div className={scoreClasses.coefBlock}>0</div>
+          </StyledTeamCoefs>
+          <StyledTeamScore>1</StyledTeamScore>
+        </StyledTeamResults>
+  </StyledTeam>
 );

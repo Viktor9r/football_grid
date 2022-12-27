@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ColumnsBlock.scss';
 import classNames from 'classnames';
+import { StyledColumnsBlock } from './styled';
 import { Column } from './Column/Column';
 import { Buttons } from './Buttons/Buttons';
 import { GridTopBar } from './GridTopBar/GridTopBar';
@@ -186,7 +187,6 @@ export const ColumnsBlock = ({ showPanel, setShowPanel }) => {
         <Column
           blocksQuant={[1]}
           columnId={7}
-          team={team}
         />
       </div>
 

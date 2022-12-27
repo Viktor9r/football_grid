@@ -1,18 +1,16 @@
 import React from 'react';
-import './Header.scss';
+import { headerClasses, StyledHeader } from './styled';
 import logo from '../../../images/ftlogo.png';
+/* eslint-disable */
 
 export const Header = () => {
-  const a = '';
-
   return (
-    <div className="header">
+    <StyledHeader>
       <img
         src={logo}
         alt="company logo"
-        className="header__logo"
+        className={headerClasses.logo}
       />
-      <div>{a}</div>
-    </div>
+    </StyledHeader>
   );
 };

@@ -1,46 +1,38 @@
 import React from 'react';
-import './Buttons.scss';
-import classNames from 'classnames';
+import ArrowBack from '@mui/icons-material/ArrowBack';
+import ArrowForward from '@mui/icons-material/ArrowForward';
+import { StyledButton, StyledButtonsBlock } from './styled';
 /* eslint-disable */
 
-export const Buttons = (props) => {
+export const Buttons = ({ quarterVisibility, setQuarterVisibility }) => {
   const showFinal = () => {
-    props.setQuarterVisibility(true);
+    setQuarterVisibility(true);
   };
 
   const hideFinal = () => {
-    props.setQuarterVisibility(false);
+    setQuarterVisibility(false);
   };
 
   return (
-    <div className={classNames({
-      buttons: true,
-      "buttons--start": !props.quarterVisibility
-    })}>
-      {props.quarterVisibility ? (
-        <button
-          type="button"
-          className="buttons__button buttons__button--prev"
+    <StyledButtonsBlock quarterVisibility={quarterVisibility}>
+      {quarterVisibility ? (
+        <StyledButton
+          variant="contained"
           onClick={hideFinal}
+          startIcon={<ArrowBack />}
         >
-          <div className="buttons__icon buttons__icon--prev"></div>
-          <div className="buttons__text">
-            Previous Stage 
-          </div>
-        </button>
+          Previous Stage
+        </StyledButton>
       ) : (
-        <button
-          type="button"
-          className="buttons__button buttons__button--next"
+        <StyledButton
+          variant="contained"
           onClick={showFinal}
+          endIcon={<ArrowForward />}
         >
-          <div className="buttons__text">
-            Next Stage 
-          </div>
-          <div className="buttons__icon buttons__icon--next"></div>
-        </button>
+          Next Stage
+        </StyledButton>
       )
     }
-    </div>
+    </StyledButtonsBlock>
   );
 };

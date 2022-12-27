@@ -1,31 +1,39 @@
 import React, { useEffect } from 'react';
-import './Column.scss';
+import {
+  StyledColumn,
+  StyledCellsList,
+} from './styled';
 import { Cell } from './Cell/Cell';
 /* eslint-disable */
 
-export const Column = (props) => {
+export const Column = ({
+  team,
+  columnId,
+  setShowFinals,
+  blocksQuant,
+}) => {
 
   useEffect(() => {
-    if (props.team === true && props.columnId === 4) {
-      props.setShowFinals(true);
+    if (team === true && columnId === 4) {
+      setShowFinals(true);
     }
   });
 
   return (
-    <div className="column">
-      <ul className="column__cells">
-        {props.blocksQuant.map((block) => (
-          <li className="column__cell" key={block}>
-            {props.team ? (
+    <StyledColumn>
+      <StyledCellsList>
+        {blocksQuant.map((block) => (
+          <li key={block}>
+            {team ? (
               <>
-                <Cell team={props.team} />
+                <Cell team={team} />
               </>
             ) : (
               <Cell />
             )}
           </li>
         ))}
-      </ul>
-    </div>
+      </StyledCellsList>
+    </StyledColumn>
   );
 };

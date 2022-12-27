@@ -1,22 +1,27 @@
-import './GridTopBar.scss';
 import React from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+
+import {
+  StyledTopBar,
+  topBarClasses,
+  TopBarButton,
+} from './styled';
 /* eslint-disable */
 
-export const GridTopBar = ({ showPanel, setShowPanel }) => {
+export const GridTopBar = ({ setShowPanel }) => {
   const hidePanel = () => {
     setShowPanel(false);
   };
 
   return (
-    <div className="gridtopbar">
-      <div className="gridtopbar__text">
+    <StyledTopBar>
+      <div className={topBarClasses.text}>
         ЮНІОРИ, ЮНІОРИ, Мужчины, -59
       </div>
-      <button
-        className="gridtopbar__button"
-        type="button"
+      <TopBarButton
         onClick={hidePanel}
-      ></button>
-    </div>
+        startIcon={<CloseIcon />}
+      ></TopBarButton>
+    </StyledTopBar>
   );
 };
