@@ -6,16 +6,16 @@ export const StyledButtonsBlock = styled('div')(({ quarterVisibility}) => ({
   marginTop: '15px',
   display: 'flex',
   width: '100%',
-  gridColumn: '1/13',
-  justifyContent: !quarterVisibility ? 'flex-end' : 'flex-start',
+  justifyContent: 'space-between',
   boxSizing: 'border-box',
+  marginBottom: '15px',
 }))
 
 export const StyledButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.secondary.main,
+color: theme.palette.secondary.main,
   background: theme.palette.background.buttons,
-  textTransform: 'uppercase',
-  padding: '15px',
+/*   padding: '15px', */
+  textTransform: 'none',
   borderRadius: '4px',
   transition: '0.3s',
   border: 'none',

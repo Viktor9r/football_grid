@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.scss';
 import {
   ThemeProvider,
   StyledEngineProvider,
   createTheme,
 } from '@mui/material/styles';
+import { StyledPage } from './styled';
 import { Container } from './components/Container/Container';
 /* eslint-disable */
 
@@ -23,15 +23,26 @@ const muiTheme = createTheme({
       third: '#2a353f',
       buttons: 'rgba(0, 66, 105, 0.07)'
     }
-  }
-})
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 5,
+          color: "#fff",
+          fontSize: "14px",
+        },
+      },
+    },
+  },
+});
 
 export const App = () => (
   <StyledEngineProvider injectFirst>
     <ThemeProvider theme={muiTheme}>
-      <div className="page">
+      <StyledPage>
         <Container />
-      </div>
+      </StyledPage>
     </ThemeProvider>
   </StyledEngineProvider>
 );

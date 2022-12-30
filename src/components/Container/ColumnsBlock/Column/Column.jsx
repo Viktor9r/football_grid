@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   StyledColumn,
   StyledCellsList,
@@ -7,31 +7,22 @@ import { Cell } from './Cell/Cell';
 /* eslint-disable */
 
 export const Column = ({
-  team,
-  columnId,
-  setShowFinals,
-  blocksQuant,
+  pairs,
+  selectedUserId,
+  setSelectedUserId,
 }) => {
-
-  useEffect(() => {
-    if (team === true && columnId === 4) {
-      setShowFinals(true);
-    }
-  });
 
   return (
     <StyledColumn>
       <StyledCellsList>
-        {blocksQuant.map((block) => (
-          <li key={block}>
-            {team ? (
-              <>
-                <Cell team={team} />
-              </>
-            ) : (
-              <Cell />
-            )}
-          </li>
+        {pairs.map((pair) => (
+          <div style={{height: '163px'}} key={pair.id}>
+            <Cell
+              pair={pair}
+              selectedUserId={selectedUserId}
+              setSelectedUserId={setSelectedUserId}
+            />
+          </div>
         ))}
       </StyledCellsList>
     </StyledColumn>

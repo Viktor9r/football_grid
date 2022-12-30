@@ -9,21 +9,40 @@ import { Team } from './Team/Team';
 import { Score } from './Score/Score';
 /* eslint-disable */
 
-export const Cell = ({ team }) => (
+export const Cell = ({
+  pair,
+  selectedUserId,
+  setSelectedUserId,
+}) => (
   <>
-    {team && (
-      <StyledCourt>Court 3 | 1:45 pm</StyledCourt>
-    )}
+    <StyledCourt>{pair.number > 0 ? (
+      `Court ${pair.court} | 0:00 pm`
+      ) : (
+        ' '
+      )}
+    </StyledCourt>
     <StyledCell>
       <div>
-        <Score team={team} />
+        <Score pair={pair} />
       </div>
       <StyledTeamBox>
         <div className={teamClasses.team}>
-          <Team team={team} />
+          <Team
+            user={pair.user1}
+            selectedUserId={selectedUserId}
+            setSelectedUserId={setSelectedUserId}
+            scores={pair.score_one}
+            winnerId={pair.winner_id}
+          />
         </div>
         <div className={teamClasses.team}>
-          <Team team={team} />
+          <Team
+            user={pair.user2}
+            selectedUserId={selectedUserId}
+            setSelectedUserId={setSelectedUserId}
+            scores={pair.score_two}
+            winnerId={pair.winner_id}
+          />
         </div>
       </StyledTeamBox>
     </StyledCell>

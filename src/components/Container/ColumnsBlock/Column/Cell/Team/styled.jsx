@@ -1,31 +1,39 @@
 import { styled } from '@mui/material/styles';
 /* eslint-disable */
 
-export const StyledTeam = styled('div')(({ theme }) => ({
-  background: theme.palette.background.first,
+export const StyledTeam = styled('div')(({ isWinner, theme, selected }) => ({
+  background: selected ? 'rgb(183, 44, 44)' : theme.palette.background.first,
   borderRadius: '8px',
   padding: '12px 17px',
   fontSize: '14px',
   display: 'flex',
   justifyContent: 'space-between',
+  boxSizing: 'border-box',
+  transition: '0.3s',
+  outline: isWinner ? '1px solid #44B181' : `1px solid ${theme.palette.background.first}`,
 }));
 
 export const StyledTeamText = styled('div')(() => ({
-  display: 'flex',
-  flexDirection: 'column',
+  paddingRight: '3px',
 }))
 
 export const StyledTeamTextTitle = styled('div')(() => ({
   marginBottom: '3px',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+  oveflow: 'hidden',
 }));
 
 export const StyledTeamTextExtra = styled('div')(({ team }) => ({
   marginBottom: '2px',
   fontSize: '8px',
   color: '#B8BBC1',
-  width: !team ? '42px' : 'fit-content',
-  height: !team ? '3px' : 'fit-content',
+  width: !team ? '42px' : 'auto',
+  height: !team ? '3px' : 'auto',
   background: !team ? 'rgba(255, 255, 255, 0.2)' : 'none',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+  oveflow: 'hidden',
 }));
 
 export const StyledTeamResults = styled('div')(({ team, theme }) => ({

@@ -1,5 +1,5 @@
-import './TopBar.scss';
 import React from 'react';
+import { StyledTopBar, StyledShowButton } from './styled';
 /* eslint-disable */
 
 export const TopBar = ({ showPanel, setShowPanel }) => {
@@ -10,15 +10,14 @@ export const TopBar = ({ showPanel, setShowPanel }) => {
 
   if (!showPanel) {
     return (
-      <div className="topbar">
-        <button
-          className="topbar__show"
+      <StyledTopBar>
+        <StyledShowButton
           type="button"
           onClick={showGrid}
         >
           Show Grid
-        </button>
-      </div>
+        </StyledShowButton>
+      </StyledTopBar>
     )
   }
 

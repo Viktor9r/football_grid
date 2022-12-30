@@ -5,6 +5,7 @@ export const StyledCourt = styled('div')(() => ({
   marginBottom: '12px',
   fontSize: '12px',
   marginLeft: '55px',
+  height: '15px',
 }));
 
 export const StyledCell = styled('div')(() => ({
@@ -16,22 +17,22 @@ export const StyledCell = styled('div')(() => ({
   marginBottom: '12px',
   position: 'relative',
   transition: '0.3s',
-  ["&:hover"]: {
-    scale: '1.08',
-  },
+  zIndex: 2,
   ["&::after"]: {
     content: '""',
+    display: 'block',
     borderTop: '2px solid #fff',
     position: 'absolute',
-    height: '60px',
+    height: '65px',
     width: '4px',
     right: '0',
-    bottom: '30%',
+    top: '33px',
     transform: 'translateX(100%)',
     borderRight: '2px solid #fff',
     borderTopRightRadius: '8px',
     borderBottom: '2px solid #fff',
     borderBottomRightRadius: '8px',
+    zIndex: -1,
   },
 }))
 

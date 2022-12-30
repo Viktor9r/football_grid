@@ -1,6 +1,4 @@
 import { styled } from '@mui/material/styles';
-import FirstFlag from 'C:/React/football_grid/src/images/ua.png';
-import SecondFlag from 'C:/React/football_grid/src/images/flags/CA.png';
 /* eslint-disable */
 
 export const StyledScore = styled('div')(({ theme, team }) => ({
@@ -13,19 +11,22 @@ export const StyledScore = styled('div')(({ theme, team }) => ({
   marginRight: '6px',
   justifyContent: 'space-between',
   borderRadius: '8px',
-  ["&>:nth-child(1)"]: {
-    backgroundImage: team ? `url(${FirstFlag})` : 'none',
-  },
-  ["&>:nth-child(3)"]: {
-    backgroundImage: team ? `url(${SecondFlag})` : 'none',
-  },
 }));
 
-export const StyledFlag = styled('div')(({ team }) => ({
+export const StyledFlag = styled('img')(({ team }) => ({
+  width: '37px',
+  height: '26px',
+  border: 'none',
+  borderRadius: '4px',
+  objectFit: 'cover',
+  backgroundSize: 'cover',
+}));
+
+export const StyledFlagEmpty = styled('div')(({}) => ({
   width: '37px',
   height: '26px',
   borderRadius: '4px',
-  background: team ? 'none' : 'rgba(255, 255, 255, 0.2)',
+  background: 'rgba(255, 255, 255, 0.2)',
 }));
 
 export const StyledScoreNumber = styled('div')(({ team }) => ({

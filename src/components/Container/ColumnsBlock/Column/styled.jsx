@@ -7,6 +7,8 @@ export const StyledColumn = styled('div')(() => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
+  paddingRight: '32px',
+  paddingLeft: '20px',
 }));
 
 export const StyledCellsList = styled(List)(() => ({
